@@ -1,21 +1,17 @@
 import { Link } from "@tanstack/react-router";
-import { Button } from "./ui/button";
+import { User2 } from "lucide-react";
 
 export default function Header() {
   return (
-    <nav className="bg-slate-800 text-slate-600 py-4 min-w-40">
-      <ul>
-        <li>
-          <Button className="rounded-none w-full">
-            <Link to="/">Overview</Link>
-          </Button>
-        </li>
-        <li>
-          <Button className="rounded-none w-full">
-            <Link to="/transactions">Transactions</Link>
-          </Button>
-        </li>
-      </ul>
-    </nav>
+    <header className="py-4 px-2 bg-slate-800 text-slate-200 flex justify-between">
+      <nav className="flex gap-4">
+        <Link to="/">Home</Link>
+        <Link to="/transactions">Transactions</Link>
+        <Link to="/transfer">Transfer</Link>
+      </nav>
+      <span className="cursor-pointer">
+        <User2 />
+      </span>
+    </header>
   );
 }
