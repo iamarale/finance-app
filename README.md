@@ -12,7 +12,7 @@ A bank Application
 
 # Todo
 
-- [ ] Account Overview
+- [x] Account Overview
 - [ ] Transaction History
 - [ ] Categorize Transactions
 - [ ] Search and Filteration system
