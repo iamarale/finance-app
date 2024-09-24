@@ -1,14 +1,21 @@
-# Finance Tracker App
+# Bank App
 
-Just a lil finance app
+A bank Application
 
 ## Tech
 
 - React
-- Shadcn + Tailwind for styling
+- Shadcn
+- TailwindCSS
+- Tanstack Router
 -
 
-## TODO:
+# Todo
 
-- Currency
--
+- [ ] Account Overview
+- [ ] Transaction History
+- [ ] Categorize Transactions
+- [ ] Search and Filteration system
+- [ ] Deposit and Withdraw features
+- [ ] Add currency Conversion
+- [ ] Create button to add, remove, adjust prices of certain items
