@@ -12,6 +12,7 @@ export default function Header() {
     { name: "Overview", href: "/" },
     { name: "Transactions", href: "/transactions" },
     { name: "Transfer", href: "/transfer" },
+    { name: "Catalog", href: "/catalog" },
   ];
 
   return (

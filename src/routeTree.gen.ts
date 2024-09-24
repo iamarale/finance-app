@@ -10,101 +10,119 @@
 
 // Import Routes
 
-import { Route as rootRoute } from "./routes/__root";
-import { Route as TransferImport } from "./routes/transfer";
-import { Route as TransactionsImport } from "./routes/transactions";
-import { Route as IndexImport } from "./routes/index";
+import { Route as rootRoute } from './routes/__root'
+import { Route as TransferImport } from './routes/transfer'
+import { Route as TransactionsImport } from './routes/transactions'
+import { Route as CatalogImport } from './routes/catalog'
+import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
 
 const TransferRoute = TransferImport.update({
-  path: "/transfer",
+  path: '/transfer',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const TransactionsRoute = TransactionsImport.update({
-  path: "/transactions",
+  path: '/transactions',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
+
+const CatalogRoute = CatalogImport.update({
+  path: '/catalog',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const IndexRoute = IndexImport.update({
-  path: "/",
+  path: '/',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 // Populate the FileRoutesByPath interface
 
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    "/": {
-      id: "/";
-      path: "/";
-      fullPath: "/";
-      preLoaderRoute: typeof IndexImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/transactions": {
-      id: "/transactions";
-      path: "/transactions";
-      fullPath: "/transactions";
-      preLoaderRoute: typeof TransactionsImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/transfer": {
-      id: "/transfer";
-      path: "/transfer";
-      fullPath: "/transfer";
-      preLoaderRoute: typeof TransferImport;
-      parentRoute: typeof rootRoute;
-    };
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/catalog': {
+      id: '/catalog'
+      path: '/catalog'
+      fullPath: '/catalog'
+      preLoaderRoute: typeof CatalogImport
+      parentRoute: typeof rootRoute
+    }
+    '/transactions': {
+      id: '/transactions'
+      path: '/transactions'
+      fullPath: '/transactions'
+      preLoaderRoute: typeof TransactionsImport
+      parentRoute: typeof rootRoute
+    }
+    '/transfer': {
+      id: '/transfer'
+      path: '/transfer'
+      fullPath: '/transfer'
+      preLoaderRoute: typeof TransferImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  "/": typeof IndexRoute;
-  "/transactions": typeof TransactionsRoute;
-  "/transfer": typeof TransferRoute;
+  '/': typeof IndexRoute
+  '/catalog': typeof CatalogRoute
+  '/transactions': typeof TransactionsRoute
+  '/transfer': typeof TransferRoute
 }
 
 export interface FileRoutesByTo {
-  "/": typeof IndexRoute;
-  "/transactions": typeof TransactionsRoute;
-  "/transfer": typeof TransferRoute;
+  '/': typeof IndexRoute
+  '/catalog': typeof CatalogRoute
+  '/transactions': typeof TransactionsRoute
+  '/transfer': typeof TransferRoute
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute;
-  "/": typeof IndexRoute;
-  "/transactions": typeof TransactionsRoute;
-  "/transfer": typeof TransferRoute;
+  __root__: typeof rootRoute
+  '/': typeof IndexRoute
+  '/catalog': typeof CatalogRoute
+  '/transactions': typeof TransactionsRoute
+  '/transfer': typeof TransferRoute
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: "/" | "/transactions" | "/transfer";
-  fileRoutesByTo: FileRoutesByTo;
-  to: "/" | "/transactions" | "/transfer";
-  id: "__root__" | "/" | "/transactions" | "/transfer";
-  fileRoutesById: FileRoutesById;
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths: '/' | '/catalog' | '/transactions' | '/transfer'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/' | '/catalog' | '/transactions' | '/transfer'
+  id: '__root__' | '/' | '/catalog' | '/transactions' | '/transfer'
+  fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute;
-  TransactionsRoute: typeof TransactionsRoute;
-  TransferRoute: typeof TransferRoute;
+  IndexRoute: typeof IndexRoute
+  CatalogRoute: typeof CatalogRoute
+  TransactionsRoute: typeof TransactionsRoute
+  TransferRoute: typeof TransferRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CatalogRoute: CatalogRoute,
   TransactionsRoute: TransactionsRoute,
   TransferRoute: TransferRoute,
-};
+}
 
 export const routeTree = rootRoute
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>();
+  ._addFileTypes<FileRouteTypes>()
 
 /* prettier-ignore-end */
 
@@ -115,12 +133,16 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/catalog",
         "/transactions",
         "/transfer"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/catalog": {
+      "filePath": "catalog.tsx"
     },
     "/transactions": {
       "filePath": "transactions.tsx"
