@@ -4,12 +4,12 @@ import TransactionButtons from "./components/TransactionButtons";
 
 export default function App() {
   return (
-    <div className="p-3">
+    <main>
       <Balance />
 
       <TransactionButtons />
 
       <RecentTransactions />
-    </div>
+    </main>
   );
 }
