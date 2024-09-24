@@ -6,7 +6,7 @@ export const Route = createRootRoute({
   component: () => (
     <>
       <Header />
-      <div className="container mx-auto mt-12">
+      <div className="container mx-auto mt-12 sm:px-2">
         <Outlet />
       </div>
       <TanStackRouterDevtools />

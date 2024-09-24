@@ -15,11 +15,11 @@ export default function Header() {
   ];
 
   return (
-    <nav className="bg-slate-800 shadow-sm sm:px-2">
+    <header className="bg-slate-800 shadow-sm sm:px-2">
       <div className="container mx-auto ">
         <div className="flex justify-between h-16">
           <div className="flex">
-            <div className="hidden  sm:flex sm:space-x-8">
+            <nav className="hidden  sm:flex sm:space-x-8">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -29,8 +29,10 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-            </div>
+            </nav>
           </div>
+
+          {/* Search Menu */}
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -43,6 +45,8 @@ export default function Header() {
               />
             </div>
           </div>
+
+          {/* Menu btn */}
           <div className="-mr-2 flex items-center sm:hidden">
             <Button
               variant="ghost"
@@ -60,19 +64,20 @@ export default function Header() {
         </div>
       </div>
 
+      {/* small VW */}
       {isMobileMenuOpen && (
         <div className="sm:hidden">
-          <div className="pt-2 pb-3 space-y-1">
+          <nav className="pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`block pl-3 pr-4 py-2 text-base font-medium `}
+                className={`block py-2 duration-75 text-slate-200 hover:text-slate-500`}
               >
                 {item.name}
               </Link>
             ))}
-          </div>
+          </nav>
           <div className="pt-4 pb-3 border-t border-slate-500">
             <div className="mt-3 px-2">
               <div className="relative">
@@ -92,6 +97,6 @@ export default function Header() {
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }
