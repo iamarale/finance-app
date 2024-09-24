@@ -1,9 +1,14 @@
 # Finance Tracker App
 
+Just a lil finance app
+
 ## Tech
 
 - React
 - Shadcn + Tailwind for styling
 -
 
-## install
+## TODO:
+
+- Currency
+-
