@@ -5,10 +5,11 @@ A bank Application
 ## Tech
 
 - React
+- Typescript
 - Shadcn
 - TailwindCSS
 - Tanstack Router
--
+- Supabase
 
 # Todo
 
