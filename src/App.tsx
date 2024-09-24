@@ -5,7 +5,7 @@ import TransactionButtons from "./components/TransactionButtons";
 import { getSupabaseData } from "./api/supabase";
 
 // data type
-interface Transaction {
+interface TransactionProps {
   category: string;
   create_at: string;
   description: string;
@@ -21,7 +21,8 @@ export default function App() {
 
   useEffect(() => {
     async function getBalance() {
-      const data: Transaction[] = await getSupabaseData("all_transactions");
+      const data: TransactionProps[] =
+        await getSupabaseData("all_transactions");
       // get data
       if (data.length > 0 && data) {
         let totalPrice = 0;
@@ -37,7 +38,7 @@ export default function App() {
   });
   return (
     <main>
-      {/*  */}
+      <h1>Welcome to your bank account</h1>
       <Balance totalBalance={totalBalance} />
 
       <TransactionButtons />

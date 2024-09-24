@@ -7,8 +7,13 @@ export default function TransactionButtons() {
   const sub = () => {};
   return (
     <section className="mt-24 mb-6 w-full flex flex-col gap-2">
-      <div className="grid w-full max-w-sm items-center gap-1.5">
-        <Input type="email" id="email" placeholder="Email" />
+      <div className="grid w-full items-center gap-1.5">
+        <Input
+          className="w-full border-slate-500 text-md"
+          type="number"
+          id="number"
+          placeholder="number"
+        />
       </div>
 
       <div className="flex gap-2 mb-4 ">
