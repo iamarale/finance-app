@@ -6,7 +6,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export default function Balance() {
+// prop
+interface BalanceProp {
+  totalBalance: number;
+}
+
+export default function Balance({ totalBalance }: BalanceProp) {
   return (
     <section>
       <Card className="mb-6">
@@ -15,7 +20,7 @@ export default function Balance() {
           <CardDescription>Available funds</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-4xl font-bold">BALANCE HERE</p>
+          <p className="text-4xl font-bold">{totalBalance}</p>
         </CardContent>
       </Card>
     </section>
