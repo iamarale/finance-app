@@ -14,8 +14,8 @@ A bank Application
 # Todo
 
 - [x] Account Overview
-  - [] Show Balance
-  - [] Show Accounts
+  - [ ] Show Balance
+  - [ ] Show Accounts
 - [ ] Transaction History
 - [ ] Categorize Transactions
 - [ ] Search and Filteration system
