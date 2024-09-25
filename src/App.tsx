@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Balance from "./components/Balance";
-import TransactionButtons from "./components/TransactionButtons";
 import { getSupabaseData } from "./api/supabase";
 
 // data type
