@@ -48,7 +48,7 @@ export default function Header() {
           </div>
 
           {/* Menu btn */}
-          <div className="-mr-2 flex items-center sm:hidden">
+          <div className=" flex items-center sm:hidden">
             <Button
               variant="ghost"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
