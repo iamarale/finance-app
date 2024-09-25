@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import AllTransactions from "../components/AllTransactions";
 
 export const Route = createFileRoute("/transactions")({
-  component: () => <div>Hello /transactions!</div>,
+  component: AllTransactions,
 });

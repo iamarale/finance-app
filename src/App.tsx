@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Balance from "./components/Balance";
-import RecentTransactions from "./components/RecentTransactions";
 import TransactionButtons from "./components/TransactionButtons";
 import { getSupabaseData } from "./api/supabase";
 
@@ -40,10 +39,6 @@ export default function App() {
     <main>
       <h1>Welcome to your bank account</h1>
       <Balance totalBalance={totalBalance} />
-
-      <TransactionButtons />
-
-      <RecentTransactions />
     </main>
   );
 }

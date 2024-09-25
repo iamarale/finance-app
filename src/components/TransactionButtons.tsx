@@ -1,4 +1,3 @@
-import { getSupabaseData } from "@/api/getSupabaseData";
 import { Button } from "./ui/button";
 import { Input } from "@/components/ui/input";
 
