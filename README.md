@@ -11,7 +11,7 @@ A bank Application
 - Tanstack Router
 - Supabase
 
-# Todo
+## Todo
 
 - [x] Account Overview
   - [ ] Show Balance
@@ -23,6 +23,6 @@ A bank Application
 - [ ] Add currency Conversion
 - [ ] Create button to add, remove, adjust prices of certain items
 
-# Clone this repo
+## Clone this repo
 
 `git clone  https://github.com/iamarale/finance-app.git`
