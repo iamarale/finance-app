@@ -16,7 +16,16 @@ export default function Balance({ totalBalance }: BalanceProp) {
     <section>
       <Card className="mb-6">
         <CardHeader>
-          <CardTitle>Account Balance</CardTitle>
+          <CardTitle>Checking</CardTitle>
+          <CardDescription>Available funds</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-4xl font-bold">{totalBalance}</p>
+        </CardContent>
+      </Card>
+      <Card className="mb-6">
+        <CardHeader>
+          <CardTitle>Saving</CardTitle>
           <CardDescription>Available funds</CardDescription>
         </CardHeader>
         <CardContent>
